@@ -517,22 +517,20 @@ function hmrAcceptRun(bundle, id) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _carts = require("./carts");
 var _cartsDefault = parcelHelpers.interopDefault(_carts);
-var _render = require("./render");
-var _renderDefault = parcelHelpers.interopDefault(_render);
-_renderDefault.default(document.body, _cartsDefault.default);
+// import render from "./render";
+ReactDom.render(_cartsDefault.default, document.body);
 
-},{"./carts":"hAwwU","./render":"jb02e","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hAwwU":[function(require,module,exports) {
+},{"./carts":"hAwwU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hAwwU":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _generate = require("./generate");
-var _generateDefault = parcelHelpers.interopDefault(_generate);
-const container = _generateDefault.default("div", {
+// import generateElement from "./generate";
+const container = React.creatElement("div", {
     class: "container"
 });
 function generateCart(name, age) {
-    const cart = _generateDefault.default("div", {
+    const cart = React.creatElement("div", {
         class: "cart"
-    }, _generateDefault.default("p", null, `Name : ${name} `), _generateDefault.default("p", null, `Age : ${age} `));
+    }, React.creatElement("p", null, `Name : ${name} `), React.creatElement("p", null, `Age : ${age} `));
     return cart;
 }
 const users = [
@@ -553,22 +551,6 @@ users.forEach((data)=>{
     container.appendChild(generateCart(data.name, data.age));
 });
 exports.default = container;
-
-},{"./generate":"cy75G","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cy75G":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-const generateElement = function(tagName, attributes, ...childs) {
-    const element = document.createElement(tagName);
-    if (attributes) Object.keys(attributes).forEach((key)=>{
-        element.setAttribute(key, attributes[key]);
-    });
-    if (childs) childs.forEach((child)=>{
-        if ("string" === typeof child) element.appendChild(document.createTextNode(child));
-        else element.appendChild(child);
-    });
-    return element;
-};
-exports.default = generateElement;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
@@ -600,14 +582,6 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"jb02e":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-function render(tag, dom) {
-    tag.appendChild(dom);
-}
-exports.default = render;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["iKiqL","bB7Pu"], "bB7Pu", "parcelRequire77dd")
+},{}]},["iKiqL","bB7Pu"], "bB7Pu", "parcelRequire77dd")
 
 //# sourceMappingURL=index.3d214d75.js.map

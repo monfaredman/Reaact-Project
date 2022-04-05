@@ -1,5 +1,5 @@
 import generateElement from "./generate";
-const container = generateElement("div", { class: "container" });
+const container = Reac("div", { class: "container" });
 function generateCart(name, age) {
   const cart = generateElement(
     "div",
