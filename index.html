@@ -28,39 +28,37 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <script type="text/babel">
-      class Paragraph extends React.Component {
-        render() {
-          return <p className="p">Start Chat</p>;
-        }
+      function Paragraph() {
+        return <span className="p">Start Chat </span>;
       }
-      class Input extends React.Component {
-        render() {
-          return <input placeholder="write" className="input" />;
-        }
+      function Input() {
+        return <input placeholder="write" className="input" />;
       }
-      class Checkbox extends React.Component {
-        render() {
-          return (
-            <label>
-              todo1
-              <input type="checkbox" />
-            </label>
-          );
-        }
+      function Checkbox() {
+        return (
+          <label>
+            todo1
+            <input type="checkbox" />
+          </label>
+        );
       }
-      class Form extends React.Component {
-        render() {
-          return (
-            <form>
-              <Paragraph />
-              <Input />
-              <Checkbox />
-            </form>
-          );
-        }
+      function Form(props) {
+        return (
+          <form>
+            <Paragraph />
+            {props.name}
+            {props.children}
+            <Input />
+            <Checkbox />
+          </form>
+        );
       }
-
-      ReactDOM.render(<Form />, document.getElementById("app"));
+      ReactDOM.render(
+        <Form name="moslem ">
+          <span className="p">how are you? </span>
+        </Form>,
+        document.getElementById("app")
+      );
     </script>
   </body>
 </html>
