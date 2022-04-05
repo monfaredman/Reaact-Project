@@ -35,33 +35,7 @@ p {
     <!-- <script src="./index.js" type="module"></script> -->
     <script crossorigin="" src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
     <script crossorigin="" src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
-    <script>function generateCart(name, age) {
-    const cart = React.createElement("div", {
-        className: "cart"
-    }, React.createElement("p", null, `Name : ${name} `), React.createElement("p", null, `Age : ${age} `));
-    return cart;
-}
-const users = [
-    {
-        name: "Moslem ❤️",
-        age: "22 😊"
-    },
-    {
-        name: "Ali 💀",
-        age: "28 ✨"
-    },
-    {
-        name: "Mohammad 💀",
-        age: "31 ✨"
-    }, 
-];
-const carts = users.map((data)=>{
-    return generateCart(data.name, data.age);
-});
-console.log(carts);
-const container = React.createElement("div", {
-    className: "container"
-}, carts);
+    <script>const name = "moslem";
 ReactDOM.render(container, document.getElementById("app"));
 
 </script>

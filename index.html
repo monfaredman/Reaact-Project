@@ -7,24 +7,11 @@
     <title>React-Course</title>
   </head>
   <style>
-    body {
-      padding: 0;
-      margin: 0;
-      width: 100%;
-    }
-    .container {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-    }
-    div.cart {
-      width: 33%;
-      margin: 2rem;
-      background-color: aquamarine;
-      text-align: center;
-    }
-    p {
+    .app {
       font-size: 2rem;
+    }
+    input.input {
+      display: block;
     }
   </style>
   <body>
@@ -38,42 +25,42 @@
       crossorigin
       src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"
     ></script>
-    <script>
-      function generateCart(name, age) {
-        const cart = React.createElement(
-          "div",
-          { className: "cart" },
-          React.createElement("p", null, `Name : ${name} `),
-          React.createElement("p", null, `Age : ${age} `)
-        );
-        return cart;
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      class Paragraph extends React.Component {
+        render() {
+          return <p className="p">Start Chat</p>;
+        }
       }
-      const users = [
-        {
-          name: "Moslem ❤️",
-          age: "22 😊",
-        },
-        {
-          name: "Ali 💀",
-          age: "28 ✨",
-        },
-        {
-          name: "Mohammad 💀",
-          age: "31 ✨",
-        },
-      ];
+      class Input extends React.Component {
+        render() {
+          return <input placeholder="write" className="input" />;
+        }
+      }
+      class Checkbox extends React.Component {
+        render() {
+          return (
+            <label>
+              todo1
+              <input type="checkbox" />
+            </label>
+          );
+        }
+      }
+      class Form extends React.Component {
+        render() {
+          return (
+            <form>
+              <Paragraph />
+              <Input />
+              <Checkbox />
+            </form>
+          );
+        }
+      }
 
-      const carts = users.map((data) => {
-        return generateCart(data.name, data.age);
-      });
-      console.log(carts);
-      const container = React.createElement(
-        "div",
-        { className: "container" },
-        carts
-      );
-
-      ReactDOM.render(container, document.getElementById("app"));
+      ReactDOM.render(<Form />, document.getElementById("app"));
     </script>
   </body>
 </html>

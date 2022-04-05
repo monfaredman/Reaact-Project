@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/monfaredman/Reaact-Project/issues"
   },
-  "homepage": "https://github.com/monfaredman/Reaact-Project#readme",
-  "devDependencies": {
-    "parcel": "^2.4.1"
-  }
+  "homepage": "https://github.com/monfaredman/Reaact-Project#readme"
 }
