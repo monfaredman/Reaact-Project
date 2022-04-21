@@ -1,5 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import State from "./state";
+import Main from "./component/main";
 
-ReactDOM.render(<State />, document.getElementById("root"));
+ReactDOM.render(<Main />, document.getElementById("root"));
