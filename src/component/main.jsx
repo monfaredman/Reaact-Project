@@ -10,15 +10,33 @@ export default class main extends Component {
     this.state = {
       data: {
         contactData: [
-          { text: "Hi MonfaredMan 👋", date: "df25jsdf", type: "user" },
-          { text: "dlfksdf", date: "df25jsdf", type: "concat" },
-          { text: "dlfksdf", date: "df25jsdf", type: "user" },
+          {
+            text: "Hi MonfaredMan 👋",
+            date: "2022-04-22T09:46:50.821",
+            type: "concat",
+          },
+          { text: "hey Tom", date: "2022-04-22T09:46:50.821", type: "user" },
+          {
+            text: "How are u?",
+            date: "2022-04-22T09:46:50.821",
+            type: "concat",
+          },
         ],
       },
     };
   }
   sendMessage = (text) => {
-    this.state.contactData.push({ text: text, date: new Date(), type: "user" });
+    const time = new Date();
+    this.setState((state) => {
+      return {
+        data: {
+          contactData: [
+            ...state.data.contactData,
+            { text: text, date: time.toISOString(), type: "user" },
+          ],
+        },
+      };
+    });
   };
   render() {
     return (

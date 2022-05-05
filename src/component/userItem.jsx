@@ -5,12 +5,12 @@ export default function userItem(props) {
   return (
     <div className="userItem">
       <div className="userDatail">
-        <p className="userTime">{props.dataUser.text}</p>
+        <p className="userTime">{props.dataUser.date}</p>
         <img className="userAvatar" src={UserAvatar} />
       </div>
       <div className="textBox">
         <div className="userTextBox">
-          <p>{props.dataUser.date}</p>
+          <p>{props.dataUser.text}</p>
         </div>
       </div>
     </div>
