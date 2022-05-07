@@ -9,7 +9,7 @@ export default class main extends Component {
     this.state = {
       posts: null,
       comments: null,
-      currentComments: 5,
+      currentComments: 8,
     };
   }
 
