@@ -11,6 +11,27 @@ body {
 }
 
 .wrapper {
-  display: flex;
-  justify-content: space-between;
+  width: 90vw;
+  height: 80vh;
+  padding: 2rem;
+  margin: auto;
+  border: 2px solid black;
+}
+.wrapper1 {
+  width: 90٪;
+  height: 90٪;
+  padding: 2rem;
+  border: 2px solid black;
+}
+.wrapper2 {
+  width: 80٪;
+  height: 50٪;
+  border: 2px solid black;
+  padding: 2rem;
+}
+.wrapper3 {
+  width: 80٪;
+  height: 50٪;
+  border: 2px solid black;
+  padding: 2rem;
 }
