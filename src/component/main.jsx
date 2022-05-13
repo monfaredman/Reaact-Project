@@ -1,24 +1,19 @@
-import Time from "./Time";
+import React, { useEffect, useState } from "react";
 
-import React, { Component } from "react";
-
-export default class main extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { showDate: true };
-  }
-  hideTime = () => {
-    this.setState((state) => {
-      return { showDate: !state.showDate };
-    });
-  };
-
-  render() {
-    return (
-      <>
-        {this.state.showDate && <Time />}
-        <btn onClick={this.hideTime}>clean</btn>
-      </>
-    );
-  }
+export default function Main() {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    console.log(count);
+  });
+  return (
+    <div>
+      <h1>{count}</h1>
+      <input
+        value={count}
+        type="number"
+        onChange={(e) => setCount(+e.target.value)}
+      />
+      <button onClick={() => setCount(count + 1)}>click!</button>
+    </div>
+  );
 }
