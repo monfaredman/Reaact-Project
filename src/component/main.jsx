@@ -1,19 +1,15 @@
 import React, { useEffect, useState } from "react";
-
+import Card from "./card";
 export default function Main() {
-  const [count, setCount] = useState(0);
+  const [data, setData] = useState([]);
   useEffect(() => {
-    console.log(count);
+    fetch("http://localhost:3001/cards")
+      .then((response) => response.json())
+      .then((data) => SVGMetadataElement(data));
   });
   return (
     <div>
-      <h1>{count}</h1>
-      <input
-        value={count}
-        type="number"
-        onChange={(e) => setCount(+e.target.value)}
-      />
-      <button onClick={() => setCount(count + 1)}>click!</button>
+      <Card data={data} />
     </div>
   );
 }
