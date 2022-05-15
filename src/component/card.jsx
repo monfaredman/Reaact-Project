@@ -1,40 +1,20 @@
 import React from "react";
+import CardImage from "./cardImage";
+import CardLevel from "./cardLevel";
+import CardDes from "./cardDes";
+import CardTitle from "./cardTitle";
+import CardUnit from "./cardUnit";
 import "../app.css";
 export default function Card(props) {
   return (
     <div className="slide-container">
       <div className="wrapper">
-        <div className="clash-card barbarian">
-          <div className="clash-card__image clash-card__image--barbarian">
-            <img src={props.data.src} alt="barbarian" />
-          </div>
-          <div className="clash-card__level clash-card__level--barbarian">
-            {props.data.level}
-          </div>
-          <div className="clash-card__unit-name">{props.data.title}</div>
-          <div className="clash-card__unit-description">
-            {props.data.description}
-          </div>
-
-          <div className="clash-card__unit-stats clash-card__unit-stats--barbarian clearfix">
-            <div className="one-third">
-              <div className="stat">
-                {props.data.Training}
-                <sup>S</sup>
-              </div>
-              <div className="stat-value">Training</div>
-            </div>
-
-            <div className="one-third">
-              <div className="stat"> {props.data.speed}</div>
-              <div className="stat-value">Speed</div>
-            </div>
-
-            <div className="one-third no-border">
-              <div className="stat">{props.data.cost}</div>
-              <div className="stat-value">Cost</div>
-            </div>
-          </div>
+        <div className={`clash-card ${props.cardInfo.name}`}>
+          <CardImage data={props.cardInfo} />
+          <CardTitle data={props.cardInfo} />
+          <CardLevel data={props.cardInfo} />
+          <CardDes data={props.cardInfo} />
+          <CardUnit data={props.cardInfo} />
         </div>
       </div>
     </div>

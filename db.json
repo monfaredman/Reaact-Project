@@ -1,4 +1,5 @@
 {
+
   "posts": [
     {
       "userId": 1,
@@ -5310,46 +5311,56 @@
       "src": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian.png",
       "level": "Level 4",
       "title": "The Barbarian",
+      "name": "barbarian",
       "description": "The Barbarian is a kilt-clad Scottish warrior with an angry,battle-ready expression, hungry for destruction. He has Killer yellow horseshoe mustache.",
       "Training": "20",
       "speed": "16",
-      "cost": "150"
+      "cost": "150",
+      "id":"0"
     },
     {
       "src": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/archer.png",
       "level": "Level 4",
       "title": "The Archer",
+      "name": "archer",
       "description": "The Archer is a female warrior with sharp eyes. She wears a short,light green dress, a hooded cape, a leather belt and an attached small pouch.",
       "Training": "25",
       "speed": "24",
-      "cost": "300"
+      "cost": "300",
+      "id":"1"
     },
     {
       "src": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/giant.png",
       "level": "Level 5",
       "title": "The Giant",
+      "name": "giant",
       "description": "Slow, steady and powerful, Giants are massive warriors that soak up huge amounts of damage. Show them a turret or cannon and you'll see their fury unleashed!",
       "Training": "2",
       "speed": "12",
-      "cost": "2250"
+      "cost": "2250",
+      "id":"2"
     },
     {
       "src": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/goblin.png",
       "level": "Level 5",
       "title": "The Goblin",
+      "name": "goblin",
       "description": "    These pesky little creatures only have eyes for one thing: LOOT! They are faster than a Spring Trap, and their hunger for resources is limitless.",
       "Training": "30",
       "speed": "32",
-      "cost": "100"
+      "cost": "100",
+      "id":"3"
     },
     {
       "src": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/wizard.png",
       "level": "Level 6",
-      "title": "The Wizard",
+      "title": "The wizard",
+      "name": "barbarian",
       "description": "The Wizard is a terrifying presence on the battlefield. Pair him up with some of his fellows and cast concentrated blasts of destruction on anything, land or sky!",
       "Training": "5",
       "speed": "16",
-      "cost": "4000"
+      "cost": "4000",
+      "id":"4"
     }
   ]
 }
