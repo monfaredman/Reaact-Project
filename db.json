@@ -1,5 +1,4 @@
 {
-
   "posts": [
     {
       "userId": 1,
@@ -5316,7 +5315,7 @@
       "Training": "20",
       "speed": "16",
       "cost": "150",
-      "id":"0"
+      "id": "0"
     },
     {
       "src": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/archer.png",
@@ -5327,7 +5326,7 @@
       "Training": "25",
       "speed": "24",
       "cost": "300",
-      "id":"1"
+      "id": "1"
     },
     {
       "src": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/giant.png",
@@ -5337,8 +5336,8 @@
       "description": "Slow, steady and powerful, Giants are massive warriors that soak up huge amounts of damage. Show them a turret or cannon and you'll see their fury unleashed!",
       "Training": "2",
       "speed": "12",
-      "cost": "2250",
-      "id":"2"
+      "cost": "2200",
+      "id": "2"
     },
     {
       "src": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/goblin.png",
@@ -5349,7 +5348,7 @@
       "Training": "30",
       "speed": "32",
       "cost": "100",
-      "id":"3"
+      "id": "3"
     },
     {
       "src": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/wizard.png",
@@ -5360,7 +5359,7 @@
       "Training": "5",
       "speed": "16",
       "cost": "4000",
-      "id":"4"
+      "id": "4"
     }
   ]
 }
