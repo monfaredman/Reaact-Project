@@ -1,40 +1,49 @@
-import React, { useState } from "react";
-import Input from "./Input";
-import Todos from "./Todos";
-
-const initState = [
-  { id: 0, title: "clean room", completed: false },
-  { id: 1, title: "go class", completed: true },
-];
-export default function Main() {
+import React, { useState, useEffect } from "react";
+export default function Main({ store }) {
   const [model, setModel] = useState("");
-  const [data, setData] = useState(initState);
-  const [id, setId] = useState(2);
+  const [id, setId] = useState(3);
+  const [, forceUpdate] = useState();
 
-  const changeModel = (e) => {
-    setModel(e.target.value);
-  };
-  const click = () => {
-    setId(id + 1);
-    initState.push({ title: model, id: id, completed: false });
-    setData([...initState]);
-    setModel("");
-  };
-  const toggle = (e) => {
-    let item = data.find((x) => x.id === e.id);
-    item.completed = !item.completed;
-    setData([...initState]);
-  };
-  const listRender = data.map((item) => (
-    <li key={"item" + item.id} onClick={() => toggle(item)}>
-      <Todos todo={item} />
+  useEffect(() => {
+    const unSubscribe = store.subscribe(() => forceUpdate((c) => c + 1));
+    return () => unSubscribe();
+  }, [store]);
+
+  const listRender = store.getState().map((item) => (
+    <li
+      key={"item" + item.id}
+      onClick={() => {
+        store.dispatch({ type: "COMPLETE_TODO", id: item.id });
+      }}
+      style={{
+        cursor: "pointer",
+        color: "green",
+        textDecoration: `${item.completed ? "line-through" : ""}`,
+      }}
+    >
+      {item.title}-{item.completed}
     </li>
   ));
   return (
     <div>
-      <Input inputMoodel={model} onEvent={changeModel} addTodo={click} />
+      <div>
+        <input
+          value={model}
+          onChange={(e) => {
+            setModel(e.target.value);
+          }}
+        />
+        <button
+          onClick={() => {
+            setId(id + 1);
+            store.dispatch({ type: "ADD_TODO", title: model, id: id });
+          }}
+        >
+          Add
+        </button>
+      </div>
       <br />
-      {listRender}
+      <ul> {listRender}</ul>
     </div>
   );
 }
