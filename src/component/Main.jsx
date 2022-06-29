@@ -1,49 +1,18 @@
-import React, { useState, useEffect } from "react";
-export default function Main({ store }) {
-  const [model, setModel] = useState("");
-  const [id, setId] = useState(3);
-  const [, forceUpdate] = useState();
+import React, { useEffect } from "react";
+import Header from "../modules/Header/header";
+import MainContent from "../modules/Main/main";
+import Footer from "../modules/Footer/footer";
+import { useSelector } from "react-redux";
 
+export default function Main() {
   useEffect(() => {
-    const unSubscribe = store.subscribe(() => forceUpdate((c) => c + 1));
-    return () => unSubscribe();
-  }, [store]);
-
-  const listRender = store.getState().map((item) => (
-    <li
-      key={"item" + item.id}
-      onClick={() => {
-        store.dispatch({ type: "COMPLETE_TODO", id: item.id });
-      }}
-      style={{
-        cursor: "pointer",
-        color: "green",
-        textDecoration: `${item.completed ? "line-through" : ""}`,
-      }}
-    >
-      {item.title}-{item.completed}
-    </li>
-  ));
+    console.log(useSelector);
+  }, []);
   return (
     <div>
-      <div>
-        <input
-          value={model}
-          onChange={(e) => {
-            setModel(e.target.value);
-          }}
-        />
-        <button
-          onClick={() => {
-            setId(id + 1);
-            store.dispatch({ type: "ADD_TODO", title: model, id: id });
-          }}
-        >
-          Add
-        </button>
-      </div>
-      <br />
-      <ul> {listRender}</ul>
+      <Header />
+      <MainContent />
+      <Footer />
     </div>
   );
 }
